@@ -38,7 +38,9 @@ jobs:
       
     - name: spider
       run: | 
+        sudo apt-get update 
         sudo apt-get install python3-bs4 -y
+        python3 --version
         python3 unsplash.py
         
         
