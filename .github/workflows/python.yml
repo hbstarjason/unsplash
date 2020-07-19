@@ -25,7 +25,6 @@ jobs:
         python -m pip install --upgrade pip
         #pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        sudo apt-get install python3-bs4 -y
         
     #- name: Lint with flake8
     #  run: |
@@ -39,7 +38,9 @@ jobs:
       
     - name: spider
       run: | 
+        sudo apt-get install python3-bs4 -y
         python3 unsplash.py
+        
         
         git config --global user.email "hbstarjason@gmail.com" && \
         git config --global user.name "hbstarjason"
